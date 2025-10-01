@@ -1,14 +1,32 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { AiFillHome } from 'react-icons/ai';
-import { FaBlog, FaTags, FaArchive, FaGithub, FaEnvelope, FaRss } from 'react-icons/fa';
+import { AiFillHome, AiOutlineClose } from 'react-icons/ai';
+import { FaBlog, FaTags, FaArchive, FaGithub, FaEnvelope, FaRss, FaTimes } from 'react-icons/fa';
 import { BiCategory } from 'react-icons/bi';
 
-const LeftSidebar = () => {
+interface LeftSidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const LeftSidebar: React.FC<LeftSidebarProps> = ({ isOpen, onClose }) => {
   return (
-    <aside className="w-64 flex-shrink-0 px-8 py-12 flex flex-col items-center bg-[#191919]">
-      <div className="flex flex-col items-center text-center">
+    <aside
+      className={`fixed lg:relative inset-y-0 left-0 transform ${
+        isOpen ? 'translate-x-0' : '-translate-x-full'
+      } lg:translate-x-0 transition-transform duration-300 ease-in-out
+      w-64 flex-shrink-0 px-8 py-12 flex flex-col items-center bg-[#191919] z-50`}
+    >
+      <button
+        className="lg:hidden absolute top-5 right-5 text-gray-400 hover:text-white"
+        onClick={onClose}
+        aria-label="Close menu"
+      >
+        <FaTimes size={24} />
+      </button>
+
+      <div className="flex flex-col items-center text-center mt-8 lg:mt-0">
         <Image
           src="https://placehold.co/100x100/333333/FFF?text=L"
           alt="Lambert"

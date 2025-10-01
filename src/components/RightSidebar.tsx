@@ -19,7 +19,7 @@ const RightSidebar = () => {
   ];
 
   return (
-    <aside className="w-80 flex-shrink-0 px-8 py-12 bg-[#191919]">
+    <aside className="w-full lg:w-80 flex-shrink-0 px-4 py-8 lg:px-8 lg:py-12 bg-[#191919]">
       <div className="relative">
         <input
           type="text"

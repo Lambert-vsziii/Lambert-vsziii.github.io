@@ -3,7 +3,7 @@ import React from 'react';
 
 const MainContent = () => {
   return (
-    <main className="flex-1 p-12">
+    <main className="flex-1 p-6 lg:p-12">
       <section>
         <h2 className="text-4xl font-bold">Greetings, Traveler 👋</h2>
         <p className="mt-4 text-gray-300">
